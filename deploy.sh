@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 docker build -t thdavidtan/multi-client:latest -t thdavidtan/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t thdavidtan/multi-server:latest -t thdavidtan/multi-server:$SHA -f ./server/Dockerfile ./server
 docker build -t thdavidtan/multi-worker:latest -t thdavidtan/multi-worker:$SHA -f ./worker/Dockerfile ./worker
