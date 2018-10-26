@@ -9,30 +9,30 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 spec:
   tls:
-    - hosts:
-        - k8s-multi.com
-        - www.k8s-multi.com
-      secretName: k8s-multi-com
+  - hosts:
+    - simplek8s.nl
+    - www.simplek8s.nl
+    secretName: simplek8s-nl
   rules:
-    - host: k8s-multi.com
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: client-cluster-ip-service
-              servicePort: 3000
-          - path: /api/
-            backend:
-              serviceName: server-cluster-ip-service
-              servicePort: 5000
-    - host: www.k8s-multi.com
-      http:
-        paths:
-          - path: /
-            backend:
-              serviceName: client-cluster-ip-service
-              servicePort: 3000
-          - path: /api/
-            backend:
-              serviceName: server-cluster-ip-service
-              servicePort: 5000
+  - host: simplek8s.nl
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: client-cluster-ip-service
+          servicePort: 3000
+      - path: /api/
+        backend:
+          serviceName: server-cluster-ip-service
+          servicePort: 5000
+  - host: www.simplek8s.nl
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: client-cluster-ip-service
+          servicePort: 3000
+      - path: /api/
+        backend:
+          serviceName: server-cluster-ip-service
+          servicePort: 5000

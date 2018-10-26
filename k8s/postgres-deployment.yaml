@@ -24,6 +24,7 @@ spec:
           volumeMounts:
             - name: postgres-storage
               mountPath: /var/lib/postgresql/data
+              # sub-folder needed for postgres
               subPath: postgres
           env:
             - name: PGPASSWORD
